@@ -1,0 +1,15 @@
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\MicrosoftWebDriver.exe
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\chromedriver.exe
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\chromedriver-license.txt
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\Selenium-Complete-Guide.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\Selenium-Complete-Guide.pdb
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\WebDriver.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\WebDriver.Support.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\WebDriver.xml
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\WebDriver.Support.xml
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\obj\Debug\Selenium-Complete-Guide.csprojResolveAssemblyReference.cache
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\obj\Debug\Selenium-Complete-Guide.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\obj\Debug\Selenium-Complete-Guide.pdb
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\nunit.framework.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\nunit.framework.xml
