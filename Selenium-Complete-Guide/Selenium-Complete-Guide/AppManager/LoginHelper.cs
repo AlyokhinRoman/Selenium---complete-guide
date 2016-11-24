@@ -24,7 +24,7 @@ namespace Selenium_Complete_Guide
         {
             if (IsLoggedIn())
             {
-                if (IsLoggedIn(account))
+               if (IsLoggedIn(account))
                 {
                     return;
                 }

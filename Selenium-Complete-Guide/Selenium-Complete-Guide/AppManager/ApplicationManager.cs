@@ -40,7 +40,7 @@ namespace Selenium_Complete_Guide
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
             baseURL = "http://poker.bwin.com";
 
-           
+            loginHelper = new LoginHelper(this);
             navigator = new NavigationHelper(this, baseURL);
            
         }
@@ -92,7 +92,6 @@ namespace Selenium_Complete_Guide
                 return navigator;
             }
         }
-        
     }
 }
 

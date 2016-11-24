@@ -13,3 +13,6 @@ C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-
 C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\obj\Debug\Selenium-Complete-Guide.pdb
 C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\nunit.framework.dll
 C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\nunit.framework.xml
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\geckodriver.exe
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\ThoughtWorks.Selenium.Core.dll
+C:\Users\ralyokhin\Documents\GitHub\Selenium---complete-guide\Selenium-Complete-Guide\Selenium-Complete-Guide\bin\Debug\ThoughtWorks.Selenium.Core.xml
