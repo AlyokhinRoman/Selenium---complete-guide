@@ -30,9 +30,9 @@ namespace Selenium_Complete_Guide
                 }
                 Logout();
             }
-            Type(By.Id("username"), account.Username);
-            Type(By.Id("password"), account.Password);
-            driver.FindElement(By.Name("submit")).Click();
+            Type(By.Name("username"), account.Username);
+            Type(By.Name("password"), account.Password);
+            driver.FindElement(By.Name("login")).Click();
         }
 
         public void Logout()

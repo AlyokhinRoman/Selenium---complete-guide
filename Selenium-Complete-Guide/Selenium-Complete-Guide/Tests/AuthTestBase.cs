@@ -13,7 +13,7 @@ namespace Selenium_Complete_Guide
         [SetUp]
         public void SetupLogin()
         {
-            app.Auth.Login(new AccountData("ukropen", "passw0rd"));
+            app.Auth.Login(new AccountData("admin", "admin"));
         }
     }
 }

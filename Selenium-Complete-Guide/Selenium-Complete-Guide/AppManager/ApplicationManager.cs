@@ -38,7 +38,7 @@ namespace Selenium_Complete_Guide
             driver = new FirefoxDriver();
             FirefoxProfile profile = new FirefoxProfile();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            baseURL = "http://poker.bwin.com";
+            baseURL = "http://localhost:8080/litecart/admin";
 
             loginHelper = new LoginHelper(this);
             navigator = new NavigationHelper(this, baseURL);

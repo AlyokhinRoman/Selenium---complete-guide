@@ -22,12 +22,12 @@ namespace Selenium_Complete_Guide
 
         public void GotoLoginPage()
         {
-            if (driver.Url == baseURL + "/en/poker/home/cookiepage")
+            if (driver.Url == baseURL + "/login.php")
             {
                 return;
             }
 
-            driver.Navigate().GoToUrl(baseURL + "/en/poker/home/cookiepage");
+            driver.Navigate().GoToUrl(baseURL + "/login.php");
         }
     }
 }
