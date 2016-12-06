@@ -34,10 +34,42 @@ namespace Selenium_Complete_Guide
 
             //driver = new ChromeDriver();
             //driver = new InternetExplorerDriver();
-            
+            //ChromeOptions options = new ChromeOptions();
+            //options.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
+            //options.AddArgument("start-maximized");
+            //driver = new ChromeDriver(options);
+
+            //InternetExplorerOptions options = new InternetExplorerOptions();
+            //options.RequireWindowFocus = true;
+            //driver = new InternetExplorerDriver(options);
+
+            // new schema:
+            //IWebDriver driver = new FirefoxDriver();
+
+            // new schema more clearly:
+            //FirefoxOptions options = new FirefoxOptions();
+            //options.UseLegacyImplementation = false;
+            //driver = new FirefoxDriver(options);
+
+            // old schema:
+            //FirefoxOptions options = new FirefoxOptions();
+            //options.UseLegacyImplementation = true;
+            //driver = new FirefoxDriver(options);
+
+            //Nightly
+            //FirefoxOptions options = new FirefoxOptions();
+            //options.BrowserExecutableLocation = @"c:\Program Files (x86)\Firefox Developer Edition\firefox.exe";
+            //driver = new FirefoxDriver(options);
+
+            //FirefoxBinary binary = new FirefoxBinary(@"c:\Program Files (x86)\Firefox Developer Edition\firefox.exe");
+            //driver = new FirefoxDriver(binary, new FirefoxProfile());
+
+
             driver = new FirefoxDriver();
             FirefoxProfile profile = new FirefoxProfile();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
+
             baseURL = "http://localhost:8080/litecart/admin";
 
             loginHelper = new LoginHelper(this);
