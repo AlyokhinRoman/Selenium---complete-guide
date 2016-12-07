@@ -100,6 +100,7 @@
     <Compile Include="AppManager\NavigationHelper.cs" />
     <Compile Include="Model\AccountData.cs" />
     <Compile Include="Tests\AuthTestBase.cs" />
+    <Compile Include="Tests\CheckAllPagesTest.cs" />
     <Compile Include="Tests\LoginTests.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

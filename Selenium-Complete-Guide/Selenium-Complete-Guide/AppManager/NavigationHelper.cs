@@ -29,5 +29,965 @@ namespace Selenium_Complete_Guide
 
             driver.Navigate().GoToUrl(baseURL + "/login.php");
         }
+
+        public void GotoAppearenceTemplatePage()
+        {
+            if (driver.Url == baseURL + "/?app=appearance&doc=template")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Appearence")).Click();
+        }
+
+        public bool EnsureAppearenceTemplatePageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Template']"));
+            return true;
+        }
+
+        public void CheckAppearenceTemplatePage()
+        {
+            GotoAppearenceTemplatePage();
+            EnsureAppearenceTemplatePageIsLoading();
+        }
+
+        public void GotoAppearenceLogotypePage()
+        {
+            if (driver.Url == baseURL + "/?app=appearance&doc=logotype")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Logotype")).Click();
+        }
+
+        public bool EnsureAppearenceLogotypePageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Logotype']"));
+            return true;
+        }
+
+        public void CheckAppearenceLogotypePage()
+        {
+            GotoAppearenceLogotypePage();
+            EnsureAppearenceLogotypePageIsLoading();
+        }
+
+        public void GotoCatalogPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=catalog")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Catalog")).Click();
+        }
+
+        public bool EnsureCatalogPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Catalog']"));
+            return true;
+        }
+
+        public void GotoProductGroupsPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=product_groups")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Product Groups")).Click();
+        }
+
+        public bool EnsureProductGroupsIsPageLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Product Groups']"));
+            return true;
+        }
+
+        public void GotoOptionGroupsPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=option_groups")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Option Groups")).Click();
+        }
+
+        public bool EnsureOptionGroupsIsPageLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Option Groups']"));
+            return true;
+        }
+
+        public void GotoManufacturersPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=manufacturers")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Manufacturers")).Click();
+        }
+
+        public bool EnsureManufacturersIsPageLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Manufacturers']"));
+            return true;
+        }
+
+        public void GotoSuppliersPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=suppliers")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Suppliers")).Click();
+        }
+
+        public bool EnsureSuppliersIsPageLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Suppliers']"));
+            return true;
+        }
+
+        public void GotoDeliveryStatusesPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=delivery_statuses")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Delivery Statuses")).Click();
+        }
+
+        public bool EnsureDeliveryStatusesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Delivery Statuses']"));
+            return true;
+        }
+
+        public void GotoSoldOutStatusesPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=sold_out_statuses")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Sold Out Statuses")).Click();
+        }
+
+        public bool EnsureSoldOutStatusesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Sold Out Statuses']"));
+            return true;
+        }
+
+        public void GotoQuantityUnitsPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=quantity_units")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Quantity Units")).Click();
+        }
+
+        public bool EnsureQuantityUnitsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Quantity Units']"));
+            return true;
+        }
+
+        public void GotoCSVImportExportPage()
+        {
+            if (driver.Url == baseURL + "/?app=catalog&doc=csv")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("CSV Import/Export")).Click();
+        }
+
+        public bool EnsureCSVImportExportPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='CSV Import/Export']"));
+            return true;
+        }
+
+        public void CheckCatalogPage()
+        {
+            GotoCatalogPage();
+            EnsureCatalogPageIsLoading();
+            GotoProductGroupsPage();
+            EnsureProductGroupsIsPageLoading();
+            GotoOptionGroupsPage();
+            EnsureOptionGroupsIsPageLoading();
+            GotoManufacturersPage();
+            EnsureManufacturersIsPageLoading();
+            GotoSuppliersPage();
+            EnsureSuppliersIsPageLoading();
+            GotoDeliveryStatusesPage();
+            EnsureDeliveryStatusesPageIsLoading();
+            GotoSoldOutStatusesPage();
+            EnsureSoldOutStatusesPageIsLoading();
+            GotoQuantityUnitsPage();
+            EnsureQuantityUnitsPageIsLoading();
+            GotoCSVImportExportPage();
+            EnsureCSVImportExportPageIsLoading();
+        }
+
+        public void CheckCountriesPage()
+        {
+            GotoCountriesPage();
+            EnsureCountriesPageIsLoading();
+        }
+
+        public void GotoCountriesPage()
+        {
+            if (driver.Url == baseURL + "/?app=countries&doc=countries")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Countries")).Click();
+        }
+
+        public bool EnsureCountriesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Countries']"));
+            return true;
+        }
+
+        public void CheckCurrenciesPage()
+        {
+            GotoCurrenciesPage();
+            EnsureCurrenciesPageIsLoading();
+        }
+
+        public void GotoCurrenciesPage()
+        {
+            if (driver.Url == baseURL + "/?app=currencies&doc=currencies")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Currencies")).Click();
+        }
+
+        public bool EnsureCurrenciesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Currencies']"));
+            return true;
+        }
+            
+
+        public void GotoCustomersPage()
+        {
+            if (driver.Url == baseURL + "/?app=customers&doc=customers")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Customers")).Click();
+        }
+
+        public bool EnsureCustomersPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Customers']"));
+            return true;
+        }
+
+        public void GotoCustomersCSVImportExportPage()
+        {
+            if (driver.Url == baseURL + "/?app=customers&doc=csv")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("CSV Import/Export")).Click();
+        }
+
+        public bool EnsureCustomersCSVImportExportPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='CSV Import/Export']"));
+            return true;
+        }
+
+        public void GotoCustomersNewsletterPage()
+        {
+            if (driver.Url == baseURL + "/?app=customers&doc=newsletter")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Newsletter")).Click();
+        }
+
+        public bool EnsureCustomersNewsletterPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Newsletter']"));
+            return true;
+        }
+
+        public void CheckCustomersPage()
+        {
+            GotoCustomersPage();
+            EnsureCustomersPageIsLoading();
+            GotoCustomersCSVImportExportPage();
+            EnsureCustomersCSVImportExportPageIsLoading();
+            GotoCustomersNewsletterPage();
+            EnsureCustomersNewsletterPageIsLoading();
+        }
+
+        public void GotoGeoZonesPage()
+        {
+            if (driver.Url == baseURL + "/?app=geo_zones&doc=geo_zones")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Geo Zones")).Click();
+        }
+
+        public bool EnsureGeoZonesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Geo Zones']"));
+            return true;
+        }
+
+        public void CheckGeoZonesPage()
+        {
+            GotoGeoZonesPage();
+            EnsureGeoZonesPageIsLoading();
+        }
+
+        public void GotoLanguagesPage()
+        {
+            if (driver.Url == baseURL + "/?app=languages&doc=languages")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Languages")).Click();
+        }
+
+        public bool EnsureLanguagesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Languages']"));
+            return true;
+        }
+
+        public void GotoStorageEncodingPage()
+        {
+            if (driver.Url == baseURL + "/?app=languages&doc=storage_encoding")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Storage Encoding")).Click();
+        }
+
+        public bool EnsureStorageEncodingPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Storage Encoding']"));
+            return true;
+        }
+
+        public void CheckLanguagesPage()
+        {
+            GotoLanguagesPage();
+            EnsureLanguagesPageIsLoading();
+            GotoStorageEncodingPage();
+            EnsureStorageEncodingPageIsLoading();
+        }
+
+        public void GotoModulesPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=jobs")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Modules")).Click();
+        }
+
+        public bool EnsureModulesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Job Modules']"));
+            return true;
+        }
+
+        public void GotoModulesCustomerPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=customer")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Customer")).Click();
+        }
+
+        public bool EnsureModulesCustomerPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Customer Modules']"));
+            return true;
+        }
+
+        public void GotoModulesShippingPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=shipping")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Shipping")).Click();
+        }
+
+        public bool EnsureModulesShippingPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Shipping Modules']"));
+            return true;
+        }
+
+        public void GotoModulesPaymentPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=payment")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Payment")).Click();
+        }
+
+        public bool EnsureModulesPaymentPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Payment Modules']"));
+            return true;
+        }
+
+        public void GotoModulesOrderTotalPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=order_total")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Order Total")).Click();
+        }
+
+        public bool EnsureModulesOrderTotalPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Order Total Modules']"));
+            return true;
+        }
+
+        public void GotoModulesOrderSuccessPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=order_success")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Order Success")).Click();
+        }
+
+        public bool EnsureModulesOrderSuccessPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Order Success Modules']"));
+            return true;
+        }
+
+        public void GotoModulesOrderActionPage()
+        {
+            if (driver.Url == baseURL + "/?app=modules&doc=order_action")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Order Action")).Click();
+        }
+
+        public bool EnsureModulesOrderActionPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Order Action Modules']"));
+            return true;
+        }
+
+        public void CheckModulesPage()
+        {
+            GotoModulesPage();
+            EnsureModulesPageIsLoading();
+            GotoModulesCustomerPage();
+            EnsureModulesCustomerPageIsLoading();
+            GotoModulesShippingPage();
+            EnsureModulesShippingPageIsLoading();
+            GotoModulesPaymentPage();
+            EnsureModulesPaymentPageIsLoading();
+            GotoModulesOrderTotalPage();
+            EnsureModulesOrderTotalPageIsLoading();
+            GotoModulesOrderSuccessPage();
+            EnsureModulesOrderSuccessPageIsLoading();
+            GotoModulesOrderActionPage();
+            EnsureModulesOrderActionPageIsLoading();
+        }
+
+        public void GotoOrdersPage()
+        {
+            if (driver.Url == baseURL + "/?app=orders&doc=orders")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Orders")).Click();
+        }
+
+        public bool EnsureOrdersPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Orders']"));
+            return true;
+        }
+
+        public void GotoOrdersStatusesPage()
+        {
+            if (driver.Url == baseURL + "/?app=orders&doc=order_statuses")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Order Statuses")).Click();
+        }
+
+        public bool EnsureOrdersStatusesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Order Statuses']"));
+            return true;
+        }
+
+        public void CheckOrdersPage()
+        {
+            GotoOrdersPage();
+            EnsureOrdersPageIsLoading();
+            GotoOrdersStatusesPage();
+            EnsureOrdersStatusesPageIsLoading();
+        }
+
+        public void GotoPagesPage()
+        {
+            if (driver.Url == baseURL + "/?app=pages&doc=pages")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Pages")).Click();
+        }
+
+        public bool EnsurePagesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Pages']"));
+            return true;
+        }
+
+        public void CheckPagesPage()
+        {
+            GotoPagesPage();
+            EnsurePagesPageIsLoading();
+        }
+
+        public void GotoReportsMonthlySalesPage()
+        {
+            if (driver.Url == baseURL + "/?app=reports&doc=monthly_sales")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Reports")).Click();
+        }
+
+        public bool EnsureReportsMonthlySalesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Monthly Sales']"));
+            return true;
+        }
+
+        public void GotoReportsMostSoldProductsPage()
+        {
+            if (driver.Url == baseURL + "/?app=reports&doc=most_sold_products")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Most Sold Products")).Click();
+        }
+
+        public bool EnsureReportsMostSoldProductsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Most Sold Products']"));
+            return true;
+        }
+
+        public void GotoReportsMostShoppingCustomersPage()
+        {
+            if (driver.Url == baseURL + "/?app=reports&doc=most_shopping_customers")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Most Shopping Customers")).Click();
+        }
+
+        public bool EnsureReportsMostShoppingCustomersPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Most Shopping Customers']"));
+            return true;
+        }
+
+        public void CheckReportsMonthlySalesPage()
+        {
+            GotoReportsMonthlySalesPage();
+            EnsureReportsMonthlySalesPageIsLoading();
+            GotoReportsMostSoldProductsPage();
+            EnsureReportsMostSoldProductsPageIsLoading();
+            GotoReportsMostShoppingCustomersPage();
+            EnsureReportsMostShoppingCustomersPageIsLoading();
+        }
+
+        public void GotoSettingsStoreInfoPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=store_info")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Settings")).Click();
+        }
+
+        public bool EnsureSettingsStoreInfoPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsDefaultsPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=defaults")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Defaults")).Click();
+        }
+
+        public bool EnsureSettingsDefaultsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsGeneralPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=general")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("General")).Click();
+        }
+
+        public bool EnsureSettingsGeneralPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsListingsPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=listings")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Listings")).Click();
+        }
+
+        public bool EnsureSettingsListingsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsImagesPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=images")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Images")).Click();
+        }
+
+        public bool EnsureSettingsImagesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsCheckoutPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=checkout")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Checkout")).Click();
+        }
+
+        public bool EnsureSettingsCheckoutPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsAdvancedPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=advanced")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Advanced")).Click();
+        }
+
+        public bool EnsureSettingsAdvancedPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void GotoSettingsSecurityPage()
+        {
+            if (driver.Url == baseURL + "/?app=settings&doc=security")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Security")).Click();
+        }
+
+        public bool EnsureSettingsSecurityPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Settings']"));
+            return true;
+        }
+
+        public void CheckSettingsPage()
+        {
+            GotoSettingsStoreInfoPage();
+            EnsureSettingsStoreInfoPageIsLoading();
+            GotoSettingsDefaultsPage();
+            EnsureSettingsDefaultsPageIsLoading();
+            GotoSettingsGeneralPage();
+            EnsureSettingsGeneralPageIsLoading();
+            GotoSettingsListingsPage();
+            EnsureSettingsListingsPageIsLoading();
+            GotoSettingsImagesPage();
+            EnsureSettingsImagesPageIsLoading();
+            GotoSettingsCheckoutPage();
+            EnsureSettingsCheckoutPageIsLoading();
+            GotoSettingsAdvancedPage();
+            EnsureSettingsAdvancedPageIsLoading();
+            GotoSettingsSecurityPage();
+            EnsureSettingsSecurityPageIsLoading();
+        }
+
+        public void GotoSlidesPage()
+        {
+            if (driver.Url == baseURL + "/?app=slides&doc=slides")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Slides")).Click();
+        }
+
+        public bool EnsureSlidesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Slides']"));
+            return true;
+        }
+
+        public void CheckSlidesPage()
+        {
+            GotoSlidesPage();
+            EnsureSlidesPageIsLoading();
+        }
+
+        public void GotoTaxClassesPage()
+        {
+            if (driver.Url == baseURL + "/?app=tax&doc=tax_classes")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Tax")).Click();
+        }
+
+        public bool EnsureTaxClassesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Tax Classes']"));
+            return true;
+        }
+
+        public void GotoTaxRatesPage()
+        {
+            if (driver.Url == baseURL + "/?app=tax&doc=tax_rates")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Tax Rates")).Click();
+        }
+
+        public bool EnsureTaxRatesPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Tax Rates']"));
+            return true;
+        }
+
+        public void CheckTaxPage()
+        {
+            GotoTaxClassesPage();
+            EnsureTaxClassesPageIsLoading();
+            GotoTaxRatesPage();
+            EnsureTaxRatesPageIsLoading();
+        }
+
+        public void GotoSearchTranslationsPage()
+        {
+            if (driver.Url == baseURL + "/?app=translations&doc=search")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Translations")).Click();
+        }
+
+        public bool EnsureSearchTranslationsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Search Translations']"));
+            return true;
+        }
+
+        public void GotoTranslationsScanFilesPage()
+        {
+            if (driver.Url == baseURL + "/?app=translations&doc=scan")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Scan Files")).Click();
+        }
+
+        public bool EnsureTranslationsScanFilesPageIsLoading()
+        {
+                driver.FindElement(By.Name("scan"));
+            return true;
+        }
+
+        public void GotoTranslationsCSVImportExportPage()
+        {
+            if (driver.Url == baseURL + "/?app=translations&doc=csv")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("CSV Import/Export")).Click();
+        }
+
+        public bool EnsureTranslationsCSVImportExportPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='CSV Import/Export']"));
+            return true;
+        }
+
+
+        public void CheckSearchTranslationsPage()
+        {
+            GotoSearchTranslationsPage();
+            EnsureSearchTranslationsPageIsLoading();
+            GotoTranslationsScanFilesPage();
+            EnsureTranslationsScanFilesPageIsLoading();
+            GotoTranslationsCSVImportExportPage();
+            EnsureTranslationsCSVImportExportPageIsLoading();
+        }
+
+        public void GotoUsersPage()
+        {
+            if (driver.Url == baseURL + "/?app=users&doc=users")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("Users")).Click();
+        }
+
+        public bool EnsureUsersPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='Users']"));
+            return true;
+        }
+
+        public void CheckUsersPage()
+        {
+            GotoUsersPage();
+            EnsureUsersPageIsLoading();
+        }
+
+        public void GotovQmodsPage()
+        {
+            if (driver.Url == baseURL + "/?app=vqmods&doc=vqmods")
+            {
+                return;
+            }
+
+            driver.FindElement(By.LinkText("vQmods")).Click();
+        }
+
+        public bool EnsurevQmodsPageIsLoading()
+        {
+            driver.FindElement(By.XPath("//td[@id='content']//h1[normalize-space(.)='vQmods']"));
+            return true;
+        }
+
+        public void CheckvQmodsPage()
+        {
+            GotovQmodsPage();
+            EnsurevQmodsPageIsLoading();
+        }
+
+        public void CheckAllPages()
+        {
+            CheckAppearenceTemplatePage();
+            CheckAppearenceLogotypePage();
+            CheckCatalogPage();
+            CheckCountriesPage();
+            CheckCurrenciesPage();
+            CheckCustomersPage();
+            CheckGeoZonesPage();
+            CheckLanguagesPage();
+            CheckModulesPage();
+            CheckOrdersPage();
+            CheckPagesPage();
+            CheckReportsMonthlySalesPage();
+            CheckSettingsPage();
+            CheckSlidesPage();
+            CheckTaxPage();
+            CheckSearchTranslationsPage();
+            CheckUsersPage();
+            CheckvQmodsPage();
+        }
     }
 }

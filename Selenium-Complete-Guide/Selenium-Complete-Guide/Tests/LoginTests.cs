@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace Selenium_Complete_Guide
 {
-    class LoginTests : TestBase
+    public class LoginTests : TestBase
     {
         [Test]
         public void LoginTest()

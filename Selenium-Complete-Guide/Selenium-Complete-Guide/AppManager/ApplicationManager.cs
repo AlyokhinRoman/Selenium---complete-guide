@@ -34,10 +34,10 @@ namespace Selenium_Complete_Guide
 
             //driver = new ChromeDriver();
             //driver = new InternetExplorerDriver();
-            //ChromeOptions options = new ChromeOptions();
-            //options.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
-            //options.AddArgument("start-maximized");
-            //driver = new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
+            options.AddArgument("start-maximized");
+            driver = new ChromeDriver(options);
 
             //InternetExplorerOptions options = new InternetExplorerOptions();
             //options.RequireWindowFocus = true;
@@ -65,8 +65,8 @@ namespace Selenium_Complete_Guide
             //driver = new FirefoxDriver(binary, new FirefoxProfile());
 
 
-            driver = new FirefoxDriver();
-            FirefoxProfile profile = new FirefoxProfile();
+            //driver = new FirefoxDriver();
+            //FirefoxProfile profile = new FirefoxProfile();
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 
 
