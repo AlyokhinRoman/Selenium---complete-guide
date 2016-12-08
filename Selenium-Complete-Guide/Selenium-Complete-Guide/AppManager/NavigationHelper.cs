@@ -989,5 +989,66 @@ namespace Selenium_Complete_Guide
             CheckUsersPage();
             CheckvQmodsPage();
         }
+
+        public void ClickCatalogButton()
+        {
+            driver.FindElement(By.CssSelector("i.fa.fa-chevron-circle-left")).Click();
+        }
+        public bool EnsureMainPageIsLoading()
+        {
+            driver.FindElement(By.Id("cart"));
+            return true;
+        }
+
+        public void GoToMainPage()
+        {
+            ClickCatalogButton();
+            EnsureMainPageIsLoading();
+        }
+
+        string salesticker = "div.sticker.sale";
+        string newsticker = "div.sticker.new";
+
+        //public bool EnsureNewSticker()
+        //{
+           // Assert.AreEqual(newsticker, driver.FindElement(By.CssSelector(newsticker)).TagName);
+            //return true;
+        //}
+
+        //public bool EnsureSaleSticker()
+        //{
+            //Assert.AreEqual(salesticker, driver.FindElement(By.CssSelector(salesticker)).TagName);
+            //return true;
+        //}
+
+        public bool EnsureAllImageHasSticker()
+        {
+        
+            ICollection<IWebElement> images = driver.FindElements(By.CssSelector("img[class=\"image\"]"));
+            
+            foreach (IWebElement image in images)
+            {
+
+                if (EnsureNewSticker());
+
+                else
+                    EnsureSaleSticker();
+
+                //return (EnsureNewSticker() || EnsureSaleSticker());
+            }
+            return true;
+        }
+
+        public bool EnsureSaleSticker()
+        {
+            driver.FindElement(By.CssSelector(salesticker));
+            return true;
+        }
+
+        public bool EnsureNewSticker()
+        {
+            driver.FindElement(By.CssSelector(newsticker));
+            return true;
+        }
     }
 }
