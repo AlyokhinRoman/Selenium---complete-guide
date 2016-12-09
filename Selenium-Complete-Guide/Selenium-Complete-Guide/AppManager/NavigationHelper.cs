@@ -1008,33 +1008,22 @@ namespace Selenium_Complete_Guide
 
         string salesticker = "div.sticker.sale";
         string newsticker = "div.sticker.new";
-
-        //public bool EnsureNewSticker()
-        //{
-           // Assert.AreEqual(newsticker, driver.FindElement(By.CssSelector(newsticker)).TagName);
-            //return true;
-        //}
-
-        //public bool EnsureSaleSticker()
-        //{
-            //Assert.AreEqual(salesticker, driver.FindElement(By.CssSelector(salesticker)).TagName);
-            //return true;
-        //}
+        string sticker = "div.sticker";
 
         public bool EnsureAllImageHasSticker()
         {
         
             ICollection<IWebElement> images = driver.FindElements(By.CssSelector("img[class=\"image\"]"));
-            
+
+            int i = driver.FindElements(By.CssSelector(sticker)).Count;
+
             foreach (IWebElement image in images)
             {
-
-                if (EnsureNewSticker());
-
-                else
-                    EnsureSaleSticker();
-
-                //return (EnsureNewSticker() || EnsureSaleSticker());
+                //if (EnsureNewSticker());
+                Assert.AreEqual(i , 11);
+                //else
+                //EnsureSaleSticker();
+                return (EnsureNewSticker() || EnsureSaleSticker());
             }
             return true;
         }
