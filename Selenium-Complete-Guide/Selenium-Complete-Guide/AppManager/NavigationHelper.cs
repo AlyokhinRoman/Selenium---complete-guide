@@ -14,6 +14,7 @@ namespace Selenium_Complete_Guide
     {
         private string baseURL;
 
+        
         public NavigationHelper(ApplicationManager manager, string baseURL)
             : base(manager)
         {
@@ -1039,6 +1040,8 @@ namespace Selenium_Complete_Guide
             Assert.IsTrue(x.SequenceEqual(sorted));
         }
 
+       
+
         public void ClickCountriesCanada()
         {
             driver.FindElement(By.LinkText("Canada")).Click();
@@ -1128,5 +1131,10 @@ namespace Selenium_Complete_Guide
             EnsureGeoZonesUnitedStatesOfAmericaPageIsLoading();
         }
 
+        public void GoToCampaignsArticle()
+        {
+            driver.FindElement(By.XPath("//div[@id='box-campaigns']/div/ul/li/a[1]/div[1]/img")).Click();
+        }
+       
     }
 }
