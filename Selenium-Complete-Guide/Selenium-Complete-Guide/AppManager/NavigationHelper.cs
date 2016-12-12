@@ -20,6 +20,8 @@ namespace Selenium_Complete_Guide
             this.baseURL = baseURL;
         }
 
+        
+
         public void GotoLoginPage()
         {
             if (driver.Url == baseURL + "/login.php")
@@ -1028,6 +1030,58 @@ namespace Selenium_Complete_Guide
             return true;
         }
 
+        public void CheckCountriesAlphabetOrder()
+        {
+            ICollection<IWebElement> countries = driver.FindElements(By.XPath("//table[@class='dataTable']"));
+            var x = countries.Select(item => item.Text.Replace(Environment.NewLine, ""));
+            var sorted = new List<string>();
+            sorted.AddRange(x.OrderBy(o => o));
+            Assert.IsTrue(x.SequenceEqual(sorted));
+        }
+
+        public void ClickCountriesCanada()
+        {
+            driver.FindElement(By.LinkText("Canada")).Click();
+        }
+
+        public bool EnsureCountriesCanadaPageIsOpened()
+        {
+            driver.FindElement(By.CssSelector("input[value=\"Canada\"]"));
+            return true;
+        }
+
+        public void GoToCountriesCanadaPage()
+        {
+            ClickCountriesCanada();
+            EnsureCountriesCanadaPageIsOpened();
+        }
+
+        public void CheckZonesAlphabetOrder()
+        {
+            ICollection<IWebElement> zones = driver.FindElements(By.Id("table-zones"));
+            var x = zones.Select(item => item.Text.Replace(Environment.NewLine, ""));
+            var sorted = new List<string>();
+            sorted.AddRange(x.OrderBy(o => o));
+            Assert.IsTrue(x.SequenceEqual(sorted));
+        }
+
+        public void ClickCountriesUSA()
+        {
+            driver.FindElement(By.LinkText("United States")).Click();
+        }
+
+        public bool EnsureCountriesUSAPageIsOpened()
+        {
+            driver.FindElement(By.CssSelector("input[value=\"USA\"]"));
+            return true;
+        }
+
+        public void GoToCountriesUSAPage()
+        {
+            ClickCountriesUSA();
+            EnsureCountriesUSAPageIsOpened();
+        }
+
         public bool EnsureSaleSticker()
         {
             driver.FindElement(By.CssSelector(salesticker));
@@ -1039,5 +1093,40 @@ namespace Selenium_Complete_Guide
             driver.FindElement(By.CssSelector(newsticker));
             return true;
         }
+
+        public void ClickGeoZonesCanada()
+        {
+            driver.FindElement(By.LinkText("Canada")).Click();
+        }
+
+        public bool EnsureGeoZonesCanadaPageIsLoading()
+        {
+            driver.FindElement(By.CssSelector("input[value=\"Canada\"]"));
+            return true;
+        }
+
+        public void GoToGeoZonesCanadaPage()
+        {
+            ClickGeoZonesCanada();
+            EnsureGeoZonesCanadaPageIsLoading();
+        }
+
+        public void ClickGeoZonesUnitedStatesOfAmerica()
+        {
+            driver.FindElement(By.LinkText("United States of America")).Click();
+        }
+
+        public bool EnsureGeoZonesUnitedStatesOfAmericaPageIsLoading()
+        {
+            driver.FindElement(By.CssSelector("input[value=\"United States of America\"]"));
+            return true;
+        }
+
+        public void GoToGeoZonesUnitedStatesOfAmericaPage()
+        {
+            ClickGeoZonesUnitedStatesOfAmerica();
+            EnsureGeoZonesUnitedStatesOfAmericaPageIsLoading();
+        }
+
     }
 }
