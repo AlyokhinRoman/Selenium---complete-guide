@@ -1135,6 +1135,88 @@ namespace Selenium_Complete_Guide
         {
             driver.FindElement(By.XPath("//div[@id='box-campaigns']/div/ul/li/a[1]/div[1]/img")).Click();
         }
-       
+
+        public void GoToCreateAccountPage()
+        {
+            ClickNewCustomersClickHereLink();
+            EnsureCreateAccountPageIsLoading();
+        }
+
+        public bool EnsureCreateAccountPageIsLoading()
+        {
+            driver.FindElement(By.XPath(".//*[@id='create-account']/h1[text() = 'Create Account']"));
+            return true;
+        }
+
+        public void ClickNewCustomersClickHereLink()
+        {
+            driver.FindElement(By.LinkText("New customers click here")).Click();
+        }
+
+        public void ClickCreateAccountButton()
+        {
+            driver.FindElement(By.Name("create_account")).Click();
+        }
+
+        public string FirstName = "firstname";
+        public string LastName = "lastname";
+        public string Address1 = "address1";
+        public string PostCode = "postcode";
+        public string City = "city";
+        public string Email = "email";
+        public string Phone = "phone";
+        public string DesiredPassword = "password";
+        public string ConfirmPassword = "confirmed_password";
+        public string LoginEmail = "test2@test.com";
+        public string Password = "123123";
+        public string LoginEmailAddress = "email";
+        public string LoginPassword = "password";
+
+        public void FillRegistrationForm()
+        {
+            Type(By.Name(FirstName), "FirstName");
+            Type(By.Name(LastName), "LastName");
+            Type(By.Name(Address1), "Address1");
+            Type(By.Name(PostCode), "21021");
+            Type(By.Name(City), "City");
+            //FillCountryField();
+            //new SelectElement(driver.FindElement(By.CssSelector("span.select2-selection__arrow"))).SelectByText("Ukraine");
+            Type(By.Name(Email), LoginEmail);
+            Type(By.Name(Phone), "+380637865432");
+            Type(By.Name(DesiredPassword), "123123");
+            Type(By.Name(ConfirmPassword), "123123");
+        }
+
+        public void FillCountryField()
+        {
+            driver.FindElement(By.XPath("//span[@id='select2-country_code-qh-container']")).Click();
+            driver.FindElement(By.CssSelector("input.select2-search__field")).SendKeys("Ukraine");
+        }
+        
+        public void RegisterNewUser()
+        {
+            GoToCreateAccountPage();
+            FillRegistrationForm();
+            ClickCreateAccountButton();
+            Logout();
+            Login();
+        }
+
+        public void Logout()
+        {
+            driver.FindElement(By.LinkText("Logout")).Click();
+        }
+
+        public void Login()
+        {
+            Type(By.Name(LoginEmailAddress), LoginEmail);
+            Type(By.Name(LoginPassword), Password);
+            ClickLoginButton();
+        }
+
+        public void ClickLoginButton()
+        {
+            driver.FindElement(By.Name("login")).Click();
+        }
     }
 }
