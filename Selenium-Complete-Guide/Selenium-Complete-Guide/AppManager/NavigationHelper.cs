@@ -14,14 +14,11 @@ namespace Selenium_Complete_Guide
     {
         private string baseURL;
 
-        
         public NavigationHelper(ApplicationManager manager, string baseURL)
             : base(manager)
         {
             this.baseURL = baseURL;
         }
-
-        
 
         public void GotoLoginPage()
         {
@@ -1040,7 +1037,6 @@ namespace Selenium_Complete_Guide
             Assert.IsTrue(x.SequenceEqual(sorted));
         }
 
-       
 
         public void ClickCountriesCanada()
         {
@@ -1218,5 +1214,125 @@ namespace Selenium_Complete_Guide
         {
             driver.FindElement(By.Name("login")).Click();
         }
+
+        public void AddNewProduct()
+        {
+            GoTokAddNewProductPage();
+            FillNewProductData();
+        }
+
+        public void FillNewProductData()
+        {
+            FillGeneralTabData();
+            FillInformationTabData();
+            FillPricesTabData();
+            ClickSaveButton();
+        }
+
+        public void ClickSaveButton()
+        {
+            driver.FindElement(By.Name("save")).Click();
+        }
+
+        public string pricesUSD = "prices[USD]";
+
+        public void FillPricesTabData()
+        {
+            GoToPricesDataTab();
+            Type(By.Name(pricesUSD), "100");
+        }
+
+        public void GoToPricesDataTab()
+        {
+            ClickPricesTab();
+            EnsurePricesTabIsLoading();
+        }
+
+        public bool EnsurePricesTabIsLoading()
+        {
+            driver.FindElement(By.XPath(".//*[@id='tab-prices']/h2[1][text() = 'Prices']"));
+            return true;
+        }
+
+        public void ClickPricesTab()
+        {
+            driver.FindElement(By.LinkText("Prices")).Click();
+        }
+
+
+        public string keywords = "keywords";
+        public string shortDdescription = "short_description[en]";
+        public string description = "description[en]";
+        public string headTitle = "head_title[en]";
+        public string metaDescription = "meta_description[en]";
+
+
+        public void FillInformationTabData()
+        {
+            GotoInformationDataTab();
+            Type(By.Name(keywords), "Keywords");
+            Type(By.Name(shortDdescription), "ShortDdescription");
+            Type(By.Name(description), "Description");
+            Type(By.Name(headTitle), "HeadTitle");
+            Type(By.Name(metaDescription), "MetaDescription");
+        }
+
+        public void GotoInformationDataTab()
+        {
+            ClickInformationTab();
+            EnsureInformationTabIsLoaded();
+        }
+
+        public bool EnsureInformationTabIsLoaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='tab-information']/table/tbody/tr[1]/td/strong[text() = 'Manufacturer']"));
+            return true;
+        }
+
+        public void ClickInformationTab()
+        {
+            driver.FindElement(By.LinkText("Information")).Click();
+        }
+
+
+        public string productName = "name[en]";
+        public string productCode = "code";
+        public string dateValidFrom = "date_valid_from";
+        public string dateValidTo = "date_valid_to";
+
+        public void FillGeneralTabData()
+        {
+            Type(By.Name(productName), "productName");
+            Type(By.Name(productCode), "productCode");
+            //Type(By.Name(dateValidFrom), "20161212");
+            //Type(By.Name(dateValidTo), "12-12-2017");
+        }
+
+        public void GoTokAddNewProductPage()
+        {
+            ClickAddNewProductButton();
+            EnsureAddNewProductPageIsLoading();
+
+        }
+
+        public bool EnsureAddNewProductPageIsLoading()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Add New Product']"));
+            return true;
+        }
+
+        public void ClickAddNewProductButton()
+        {
+            driver.FindElement(By.LinkText("Add New Product")).Click();
+        }
+
+        public void CheckProductAdded()
+        {
+            ICollection<IWebElement> productList = driver.FindElements(By.CssSelector("tr[class=\"row semi-transparent\"]"));
+            var x = productList.Select(item => item.Text.Replace(Environment.NewLine, ""));
+            var sorted = new List<string>();
+            sorted.Contains(productName);
+        }
+
     }
 }

@@ -105,6 +105,7 @@
     <Compile Include="Tests\CountrysSortTests.cs" />
     <Compile Include="Tests\GeoZonesSortTests.cs" />
     <Compile Include="Tests\LoginTests.cs" />
+    <Compile Include="Tests\ProductTests.cs" />
     <Compile Include="Tests\RegistrationTest.cs" />
     <Compile Include="Tests\StickerTests.cs" />
     <Compile Include="Tests\TestBase.cs" />
