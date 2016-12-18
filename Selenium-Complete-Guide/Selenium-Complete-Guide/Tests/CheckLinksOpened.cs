@@ -11,6 +11,7 @@ namespace Selenium_Complete_Guide
     {
         [Test]
 
+        public void ChecklinksOpenedOnCountryesPage()
         {
             app.Navigator.GotoCountriesPage();
             app.Navigator.CheckLinks();
