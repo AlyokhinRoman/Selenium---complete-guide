@@ -20,7 +20,7 @@ namespace Selenium_Complete_Guide
             this.baseURL = baseURL;
         }
 
-        
+       
 
         public void GotoLoginPage()
         {
@@ -1414,7 +1414,7 @@ namespace Selenium_Complete_Guide
             
         }
 
-        private void CheckIsTableUpdated()
+        public void CheckIsTableUpdated()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement element = wait.Until(ExpectedConditions.ElementExists(By.Id("order_confirmation-wrapper")));
@@ -1439,9 +1439,88 @@ namespace Selenium_Complete_Guide
             return true;
         }
 
-        private void ClickChekoutlink()
+        public void ClickChekoutlink()
         {
             driver.FindElement(By.LinkText("Checkout »")).Click();
+        }
+
+        public void CheckLinks()
+        {
+            OpenAddnewCountryPage();
+            ClickCodeAlpha2Link();
+            WaitAndCloseMethod();
+            ClickCodeAlpha3Link();
+            WaitAndCloseMethod();
+            ClickTaxIDFormatLink();
+            WaitAndCloseMethod();
+            ClickAddressFormatLink();
+            WaitAndCloseMethod();
+            ClickPostcodeFormatLink();
+            WaitAndCloseMethod();
+            ClickCurrencyCodeLink();
+            WaitAndCloseMethod();
+            ClickPhoneCountryCodeLink();
+            WaitAndCloseMethod();
+        }
+
+        public void WaitAndCloseMethod()
+        {
+            driver.SwitchTo().Window(driver.WindowHandles.Last());
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            driver.Close();
+            driver.SwitchTo().Window(driver.WindowHandles.First());
+        }
+
+        public void ClickPhoneCountryCodeLink()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[10]/td/a/i")).Click();
+        }
+
+        public void ClickCurrencyCodeLink()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[9]/td/a/i")).Click();
+        }
+
+        public void ClickPostcodeFormatLink()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[8]/td/a/i")).Click();
+        }
+
+        public void ClickAddressFormatLink()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[7]/td/a[2]/i")).Click();
+        }
+
+        public void ClickTaxIDFormatLink()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[6]/td/a/i")).Click();
+        }
+
+        public void ClickCodeAlpha2Link()
+        {
+            driver.FindElement(By.CssSelector("i.fa.fa-external-link")).Click();
+        }
+
+        public void ClickCodeAlpha3Link()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/form/table[1]/tbody/tr[3]/td/a/i")).Click();
+        }
+
+        public void OpenAddnewCountryPage()
+        {
+            ClickAddnewCountrybutton();
+            EnsureAddnewCountrypageIsloading();
+        }
+
+        private bool EnsureAddnewCountrypageIsloading()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Add New Country']"));
+            return true;
+        }
+
+        public void ClickAddnewCountrybutton()
+        {
+            driver.FindElement(By.LinkText("Add New Country")).Click();
         }
     }
 }
