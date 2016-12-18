@@ -102,6 +102,7 @@
     <Compile Include="Tests\AuthTestBase.cs" />
     <Compile Include="Tests\CampaignsTests.cs" />
     <Compile Include="Tests\CheckAllPagesTest.cs" />
+    <Compile Include="Tests\CheckoutTests.cs" />
     <Compile Include="Tests\CountrysSortTests.cs" />
     <Compile Include="Tests\GeoZonesSortTests.cs" />
     <Compile Include="Tests\LoginTests.cs" />

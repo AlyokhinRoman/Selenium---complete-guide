@@ -20,6 +20,8 @@ namespace Selenium_Complete_Guide
             this.baseURL = baseURL;
         }
 
+        
+
         public void GotoLoginPage()
         {
             if (driver.Url == baseURL + "/login.php")
@@ -1300,6 +1302,7 @@ namespace Selenium_Complete_Guide
         public string dateValidFrom = "date_valid_from";
         public string dateValidTo = "date_valid_to";
 
+        
         public void FillGeneralTabData()
         {
             Type(By.Name(productName), "productName");
@@ -1334,5 +1337,111 @@ namespace Selenium_Complete_Guide
             sorted.Contains(productName);
         }
 
+        public void Add1ProductToCheckout()
+        {
+            GoToCampaignsArticle();
+            SelectSmallSize();
+            ClickAddToCartButton();
+            Check1CartIsUpdated();
+            driver.Navigate().Back();
+        }
+
+        public void SelectSmallSize()
+        {
+            driver.FindElement(By.XPath("//td[@class='options']/select//option[2]")).Click();
+        }
+
+        public void Check1CartIsUpdated()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@id='cart']//span[.='1']")));
+        }
+
+        public void ClickAddToCartButton()
+        {
+            //if (EnsureOptionsSizeIsDisplayed())
+            //{
+            //    driver.FindElement(By.XPath("//td[@class='options']/select//option[2]")).Submit();
+            //}
+            //else
+            driver.FindElement(By.Name("add_cart_product")).Click();
+        }
+
+        public bool EnsureOptionsSizeIsDisplayed()
+        {
+            driver.FindElement(By.XPath(".//*[@id='box-product']/div[2]/div[2]/div[5]/form/table/tbody/tr[1]/td/strong[text() = 'Size']"));
+            return true;
+        }
+
+        public void GoToMostPopularProduct()
+        {
+            driver.FindElement(By.XPath("//div[@id='box-most-popular']/div/ul/li[1]/a[1]/div[1]/img")).Click();
+        }
+
+        public void Add3ProductToCheckout()
+        {
+            GoToCampaignsArticle();
+            SelectSmallSize();
+            ClickAddToCartButton();
+            Check3CartIsUpdated();
+        }
+
+        public void Check3CartIsUpdated()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@id='cart']//span[.='3']")));
+        }
+
+        public void Add2ProductToCheckout()
+        {
+            GoToCampaignsArticle();
+            SelectSmallSize();
+            ClickAddToCartButton();
+            Check2CartIsUpdated();
+            driver.Navigate().Back();
+        }
+        public void Check2CartIsUpdated()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(ExpectedConditions.ElementExists(By.XPath("//div[@id='cart']//span[.='2']")));
+        }
+
+        public void DeleteProductsFromCheckout()
+        {
+            OpenCheckoutPage();
+            ClickRemoveButton();
+            CheckIsTableUpdated();
+            
+        }
+
+        private void CheckIsTableUpdated()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(ExpectedConditions.ElementExists(By.Id("order_confirmation-wrapper")));
+        }
+
+        
+
+        public void ClickRemoveButton()
+        {
+            driver.FindElement(By.Name("remove_cart_item"));
+        }
+
+        public void OpenCheckoutPage()
+        {
+            ClickChekoutlink();
+            EnsureCheckoutpageIsLoading();
+        }
+
+        public bool EnsureCheckoutpageIsLoading()
+        {
+            driver.FindElement(By.XPath(".//*[@id='box-checkout-summary']/h2[text() = 'Order Summary']"));
+            return true;
+        }
+
+        private void ClickChekoutlink()
+        {
+            driver.FindElement(By.LinkText("Checkout »")).Click();
+        }
     }
 }
