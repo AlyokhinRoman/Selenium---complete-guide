@@ -13,6 +13,7 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Remote;
 
 
+
 namespace Selenium_Complete_Guide
 {
     public class ApplicationManager

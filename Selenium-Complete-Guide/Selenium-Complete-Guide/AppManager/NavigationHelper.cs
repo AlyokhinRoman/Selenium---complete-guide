@@ -1539,8 +1539,9 @@ namespace Selenium_Complete_Guide
 
         public void CheckLogs()
         {
-            Console.WriteLine(driver.Manage().Logs.GetLog(LogType.Browser));
-            driver.Navigate().Back();
+            {
+            }
+                driver.Navigate().Back();
         }
 
         public void ClickRubberDucksLink()
