@@ -17,7 +17,7 @@ namespace Selenium_Complete_Guide
 {
     public class ApplicationManager
     {
-        protected IWebDriver driver;
+        protected EventFiringWebDriver driver;
         protected string baseURL;
 
         
@@ -34,10 +34,15 @@ namespace Selenium_Complete_Guide
 
             //driver = new ChromeDriver();
             //driver = new InternetExplorerDriver();
+            //IWebDriver driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), DesiredCapabilities.Chrome());
             ChromeOptions options = new ChromeOptions();
             options.BinaryLocation = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe";
             options.AddArgument("start-maximized");
-            driver = new ChromeDriver(options);
+            options.SetLoggingPreference(LogType.Browser, LogLevel.All);
+            driver = new EventFiringWebDriver(new ChromeDriver(options));
+            driver.FindingElement += (sender, e) => Console.WriteLine(e.FindMethod);
+            driver.FindElementCompleted += (sender, e) => Console.WriteLine(e.FindMethod + " found");
+            driver.ExceptionThrown += (sender, e) => Console.WriteLine(e.ThrownException);
 
             //InternetExplorerOptions options = new InternetExplorerOptions();
             //options.RequireWindowFocus = true;
@@ -77,6 +82,7 @@ namespace Selenium_Complete_Guide
            
         }
 
+       
         ~ApplicationManager()
         {
             try

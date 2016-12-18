@@ -21,7 +21,6 @@ namespace Selenium_Complete_Guide
         }
 
        
-
         public void GotoLoginPage()
         {
             if (driver.Url == baseURL + "/login.php")
@@ -1521,6 +1520,117 @@ namespace Selenium_Complete_Guide
         public void ClickAddnewCountrybutton()
         {
             driver.FindElement(By.LinkText("Add New Country")).Click();
+        }
+
+        public void CheckCatalogPageProducts()
+        {
+            ClickRubberDucksLink();
+            OpenBlueDuckPage();
+            CheckLogs();
+            OpenGreenDuckPage();
+            CheckLogs();
+            OpenPurpleDuckPage();
+            CheckLogs();
+            OpenRedDuckPage();
+            CheckLogs();
+            OpenYellowDuckPage();
+            CheckLogs();
+        }
+
+        public void CheckLogs()
+        {
+            Console.WriteLine(driver.Manage().Logs.GetLog(LogType.Browser));
+            driver.Navigate().Back();
+        }
+
+        public void ClickRubberDucksLink()
+        {
+            driver.FindElement(By.LinkText("Rubber Ducks")).Click();
+        }
+
+        public void OpenYellowDuckPage()
+        {
+            ClickYellowDuckLink();
+            EnsureYellowDuckPageIsloaded();
+        }
+
+        public bool EnsureYellowDuckPageIsloaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Edit Product: Yellow Duck']"));
+            return true;
+        }
+
+        public void ClickYellowDuckLink()
+        {
+            driver.FindElement(By.LinkText("Yellow Duck")).Click();
+        }
+
+        public void OpenRedDuckPage()
+        {
+            ClickRedDuckLink();
+            EnsureRedDuckPageIsloaded();
+        }
+
+        public bool EnsureRedDuckPageIsloaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Edit Product: Red Duck']"));
+            return true;
+        }
+
+        public void ClickRedDuckLink()
+        {
+            driver.FindElement(By.LinkText("Red Duck")).Click();
+        }
+
+        public void OpenPurpleDuckPage()
+        {
+            ClickPurpleDuckLink();
+            EnsurePurpleDuckPageIsloaded();
+        }
+
+        public bool EnsurePurpleDuckPageIsloaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Edit Product: Purple Duck']"));
+            return true;
+        }
+
+        public void ClickPurpleDuckLink()
+        {
+            driver.FindElement(By.LinkText("Purple Duck")).Click();
+        }
+
+        public void OpenGreenDuckPage()
+        {
+            ClickGreenDuckLink();
+            EnsureGreenDuckPageIsloaded();
+        }
+
+        public bool EnsureGreenDuckPageIsloaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Edit Product: Green Duck']"));
+            return true;
+        }
+
+        public void ClickGreenDuckLink()
+        {
+            driver.FindElement(By.LinkText("Green Duck")).Click();
+        }
+
+        public void OpenBlueDuckPage()
+        {
+            ClickBlueDuckLink();
+            EnsureBlueDuckPageIsloaded();
+        }
+
+        public bool EnsureBlueDuckPageIsloaded()
+        {
+            driver.FindElement(By.XPath(".//*[@id='content']/h1[text() = ' Edit Product: Blue Duck']"));
+            return true;
+        }
+
+        public void ClickBlueDuckLink()
+        {
+            driver.FindElement(By.LinkText("Blue Duck")).Click();
         }
     }
 }
