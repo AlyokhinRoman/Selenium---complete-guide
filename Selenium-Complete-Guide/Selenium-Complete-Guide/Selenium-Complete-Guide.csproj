@@ -95,9 +95,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AppManager\ApplicationManager.cs" />
+    <Compile Include="AppManager\CheckoutHelper.cs" />
+    <Compile Include="AppManager\DucksHelper.cs" />
     <Compile Include="AppManager\HelperBase.cs" />
     <Compile Include="AppManager\LoginHelper.cs" />
     <Compile Include="AppManager\NavigationHelper.cs" />
+    <Compile Include="AppManager\ProductPageHelper.cs" />
     <Compile Include="Model\AccountData.cs" />
     <Compile Include="Tests\AuthTestBase.cs" />
     <Compile Include="Tests\CampaignsTests.cs" />
@@ -111,6 +114,7 @@
     <Compile Include="Tests\ProductTests.cs" />
     <Compile Include="Tests\RegistrationTest.cs" />
     <Compile Include="Tests\StickerTests.cs" />
+    <Compile Include="Tests\Task_19_Test.cs" />
     <Compile Include="Tests\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

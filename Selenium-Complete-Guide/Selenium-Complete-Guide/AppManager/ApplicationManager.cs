@@ -21,11 +21,12 @@ namespace Selenium_Complete_Guide
         protected EventFiringWebDriver driver;
         protected string baseURL;
 
-        
+
         protected NavigationHelper navigator;
         protected LoginHelper loginHelper;
-
-
+        protected ProductPageHelper productpageHelper;
+        protected DucksHelper ducksHelper;
+        protected CheckoutHelper checkoutHelper;
 
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
@@ -80,10 +81,12 @@ namespace Selenium_Complete_Guide
 
             loginHelper = new LoginHelper(this);
             navigator = new NavigationHelper(this, baseURL);
-           
+            productpageHelper = new ProductPageHelper(this);
+            ducksHelper = new DucksHelper(this);
+            checkoutHelper = new CheckoutHelper(this);
         }
 
-       
+
         ~ApplicationManager()
         {
             try
@@ -124,6 +127,29 @@ namespace Selenium_Complete_Guide
             }
         }
 
+        public ProductPageHelper ProductPage
+        {
+            get
+            {
+                return productpageHelper;
+            }
+        }
+    
+        public DucksHelper Ducks
+        {
+        get
+            {
+                return ducksHelper;
+            }
+        }
+
+        public CheckoutHelper Checkout
+        {
+            get
+            {
+                return checkoutHelper;
+            }
+        }
         public NavigationHelper Navigator
         {
             get
